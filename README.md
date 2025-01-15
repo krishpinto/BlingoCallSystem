@@ -1,33 +1,63 @@
-# Description
-A FastAPI application for the voice call bot. The AI agent calls the customer and discuss the product deals with him. It is a cold call system. The latency of the system is less than 1 second. It takes the prompt from the API and calls the customer according to the prompt and instruction given during the API calling. You can use the pre-trained model for the better responses. It contains all of the voices given in the elevenslab platform. You can choose a voice before making a call to the customer.
-It is realtime and it use websockets for the realtime communication.
+# Blingo Voice Call Bot System
 
-# Tool & Technologies Used
-1. Python3
-2. FastAPI
-3. SQLModel ORM
-4. OpenAI (for answer generation)
-5. AWS Transcribe (for transcription)
-6. Twilio (for calling)
-7. Elevenslab (for text to voice conversion)
+Blingo's **Voice Call Bot System** is a FastAPI application designed for efficient cold calling. The AI agent engages customers in product discussions with ultra-low latency (<1 second). Using real-time websockets, pre-trained models, and **Elevenslab's** text-to-voice features, users can select a custom voice and initiate calls seamlessly.
 
-# Core Features
-1. JWT Authentication system in FastAPI
-2. Handle multiple connections of the system users in websockets
-3. System user can choose a voice before making a call to the customer
-4. User can see and listen all the available voices and choose one of them
-5. User can upload an excel file of customer contacts for the campaign call (one call at a time)
+---
 
-# What is remaining
-1. Payment gateway implementaion
-2. Frontend
-3. PostgreSQL for database
+### Key Technologies
 
-# Major Issues In This
-1. The AWS Transcribe generates the transcription from background noise sometimes, that transcription goes to text generation model and user get's the unexpected response. It can be solved by implementing the noise reduction techniques.
+- **Python 3**  
+- **FastAPI**  
+- **SQLModel ORM**  
+- **OpenAI** (response generation)  
+- **AWS Transcribe** (speech-to-text)  
+- **Twilio** (calling)  
+- **Elevenslab** (text-to-voice conversion)  
 
-# Installation & Setup
-1. Install the libraries from requirements.txt file
-2. Create a sqlite3 db file in project root directory
-3. Rename example.env file into .env and put your secret keys there
-4. Run the server by `uvicorn src.main:app`
+---
+
+### Features
+
+1. **Secure Authentication**: JWT-based system for user security.  
+2. **Real-Time WebSocket Support**: Manage multiple user connections.  
+3. **Custom Voice Selection**: Browse and select from available voices.  
+4. **Campaign Calls**: Upload customer contact lists (Excel) for sequential calls.
+
+---
+
+### Next Steps
+
+- **Payment Gateway Integration**  
+- **Frontend Development**  
+- **PostgreSQL Migration**  
+
+---
+
+### Challenges
+
+**Noise in Transcriptions**:  
+AWS Transcribe may misinterpret background noise, leading to unexpected AI responses. Implementing noise reduction can resolve this.
+
+---
+
+### Setup
+
+1. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Create a SQLite database file in the project root.  
+3. Rename `example.env` to `.env` and add configuration keys.  
+4. Launch the server:  
+   ```bash
+   uvicorn src.main:app
+   ```
+
+---
+
+### Team Blingo
+
+**Members**:  
+- Ethan Rodrigues  
+- Krish Pinto  
+- Allen Peter
